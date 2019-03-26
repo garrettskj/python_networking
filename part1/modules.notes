@@ -1,0 +1,502 @@
+
+###########################
+# Module 3:
+#########################
+import sys
+sys.argv
+-gets the argumets in a list form
+
+raw_input
+- (takes data from stdin)
+
+###########################
+# Module 4
+###########################
+variables:
+- never starts with number
+- always starts with lowercase letter
+- keep reasonable length
+
+python specific variables start with underscores
+_name
+__name
+
+
+multiple assignment
+var_a = var_b = var_c = 10
+var_a, var_b, var_c = 10
+
+'id' commands gives the assignment in memory
+
+a = 10
+id(10)
+id(a)
+b = a
+id(b)
+- all the same memory values
+
+types: type(xyz)
+str, int, float, dict, list, tuple
+
+mutable
+list, dictionaries, sets
+
+immutable
+string, numbers, tuples
+
+Strings:
+triple quotes for multiple lines
+""" line 
+line 
+line"""
+
+str.startswith(char) = returns boolean
+str.endswith(char) = returns boolean
+str.index(char) = returns the index number
+str.count(char) = counts the times the char appears in str
+str.find(str2) = returns the index number for the first time str2 is found (-1 if not found)
+str.upper() = returns uppercase version
+str.lower() = returns lowercase version
+str.strip(str) = returns without surrounding string (if left blank, removes whitespace)
+str.replace(var_a, var_b) = replaces var_a with var_b in the string
+str.split(",") = changes a string to a list based on a "," delimiter
+"-".join(list_a) = join each element in list_a with "-"
+
+"+" = concatenates string
+"*" = multiplies string
+"char" (not) in str = returns boolean if char is (not) in str
+
+"my name is %s " % ("bob") = "my name is bob"
+"my name is {0} {1}".format("bob", "smith") = "my name is bob smith"
+
+slices: (string/lists)
+str[5:10] = returns index 5 to 10
+str[5:] = returns index 5 to end of string
+str[:10] = returns index 0 to index 10
+str[:] = returns entire string
+str[-1] = returns last char
+str[-2] = returns second to last char
+str[-9:] = returns ninth to last char to end of string
+str[:-5] = returns start of string to the fifth to last char in the string
+str[startindex:endindex:step] = hop throught the string by the step, positive to go forward, negative to go backwards.
+
+list methods
+min() = minimal value
+max() = largest list value
+
+list.append(item) = adds an item to the END of a list.
+del list[index] = removes the item at the index number
+list.pop(index) = removes the element at the index number
+list.remove("item") = removes the item from the list
+list.insert(index, "item") = adds item at index number
+list1.extend(list2) = appends list2 to list1
+list.index("item") = returns the index of "item"
+list.count("item") = returns the number of times that "item" appears in the list
+
+list.sort() = sorts smallest to largest (ascending)
+list.reverse() = sorts largest to smallest (descending)
+## these are sorted in line.
+
+sorted(list2) = cretes a new ascending list
+sorted(list2, reverse=True) = creates a new descending list
+## these are newly created lists
+
+list1 + list2 = concatenates lists
+list1 * 3 = concatenates three copies of list1
+
+##
+Sets are unordered lists with all unique elements
+
+setX = ([1,2,3])
+or
+setX = {1,2,3}
+
+len(setX)
+
+item in setX
+item (not) in setX
+
+setX.add(item)
+setX.remove(item)
+
+set1.intersection(set2) = returns only the elements that overlap in set1 and set2
+set1.difference(set2) = returns the elements that are unique to set1
+set1.union(set2) = returns set1 and set2 as a single setX
+setX.pop("item") = removes an item from a setX
+setX.clear() = empties a setX
+
+####
+tuple are immutable ordered lists, you can't add or remove.
+
+tupleX = (1,2,3,4,5)
+
+create a single tuple with (10,)
+
+tuple packing/unpacking
+
+tupleX = (1,2,3)
+(a,b,c) = tupleX
+a = 1, b = 2, c = 3
+# Same size only
+
+len(tupleX)
+min(tupleX)
+max(tupleX)
+
+## these are newly created lists
+list1 + list2 = concatenates lists
+list1 * 3 = concatenates three copies of list1
+
+###
+Dictionary methods
+
+dict['key'] = value
+del dict['key']
+len(dict1) = number of k,v pairs
+
+"key" in dict1
+"key" (not) in dict1
+
+dict1.keys() = returns a list of keys
+dict1.values() = returns a list of values
+dict1.items() = returns a list of tuples of K,V
+
+####
+
+Number conversion:
+num = 10
+num_bin = bin(num) # converts 10 to binary
+num_hex = hex(num) # converts 10 to hex
+
+bin_to_num = int(num_bin, 2) # converts binary to int, base2
+hex_to_num = int(num_hex, 16) # converts hex to int, base16
+
+###########################
+Module 5
+###########################
+for loops:
+for-else = excutes the else at the end of the loop.
+
+while loops:
+while-else = executes at the end of the while loop.
+
+if statement
+
+if x == 3:
+ if y == 4:
+
+^ is the same as 'if (x == 3) and (y == 4):'
+(single line)
+
+break: terminates the loop that the break is in.
+continue: completes the loop iteration that the continue is in
+pass: just keep going. is used to fix indentation errors
+
+exceptions:
+try/except
+try: 
+	do your code
+except ExceptionError
+except <catches all, bad practice, build specifics exception grabs>
+else: is executed if the try statement works perfectly
+finally: runs if there was an error or not, AFTER the try block 'tries'
+
+###########################
+Module 6
+###########################
+
+def nameX(argumentA):
+	"this is a doc string"
+
+help(nameX)
+
+keyword arguments:
+nameX(a=1,b=2,c=3)
+
+positional argument:
+nameX(a,b,c)
+
+nameX(a,b,c=3) # sets c as 3 default
+
+def name(x, *args) # allows for multiple positional parameters
+ - args is passed in as a tuple
+ - specify keyword args using **kwargs instead of *args
+ -- **kwargs will come in as a dictionary
+
+
+global var_a = makes this variable accessible globally to every function
+
+import moduleX
+
+dir(moduleX)
+moduleX.functionY()
+
+from moduleX import functionY
+# - allows you to call 'functionY' directly without moduleX.functionY
+
+if __name__ == "main":
+	code
+
+# ^ this makes it so that the code won't execute if it's imported
+
+
+###########################
+Module 7
+###########################
+opening file handles:
+r, w, a, (rb,wb,ab)
+(reading, writing, append, binary)
+r+, w+, a+ (rb+, wb+, ab+)
+w+ = opened for reading and writing
+
+myfile = open("foo.txt", r)
+
+myfile.mode = returns the method that it was opened
+myfile.read() = returns entire as a single string
+
+myfile.read(5) = reads 5 characters into the buffer
+
+myfile.seek(3) = sets the cursor as to where to start the read
+myfile.tell() = tells me where my cursor currently is
+
+myfile.readline() = reads each line, and sets cursor position.
+myfile.readlines() = returns a list, breaking at each EOL
+-------
+myfile = open("bar.txt", "w")
+myfile.write("blah blah blah")
+myfile.close() 
+
+myfile.writelines(["a", "b", "c"]) = writes a list, (not seperated by newlines)
+myfile.writelines(("a", "b", "c")) = writes a tuple, (not seperated by newlines)
+
+------------
+myfile = open("bar.txt", "a")
+myfile.write("blah blah blah")
+myfile.close()
+
+myfile.closed() = returns boolean on close state
+
+with open("filename.txt", "w") as file:
+	file.write("abc")
+
+^ this method will autoclose files, this is preferable.
+
+###########################
+Module 8
+###########################
+Regular Expressions
+import re
+strA = "something"
+
+rgx_str = re.match("some", strA) = returns a match at the start of a string
+rgx_str = group() = returns the patern matched
+rgx_str = re.match("some", strA, re.I) = re.I allows for case-insenstive matches
+
+rgx_str = re.search(r"blah", strA) = 
+- the r says it's a 'raw string'
+- returns none if nothing is found, returns 
+- a group() represents the matched pattern inside of ()
+
+. = any character
++ = greedy matching (1 or more)
+* = greedy matching (0 or more)
+? = less greedy
+\d = digit
+\w = alphanumeric charter
+\s = whitespace character
+{#} = number of occurances (bounding start#, end#)
+
+findall()
+- each found element is returned as a list
+
+sub(strA, strB
+
+re.I == re.IGNORECASE   Ignore case
+re.L == re.LOCALE       Make \w, \b, and \s locale dependent
+re.M == re.MULTILINE    Multiline
+re.S == re.DOTALL       Dot matches all (including newline)
+re.U == re.UNICODE      Make \w, \b, \d, and \s unicode dependent
+re.X == re.VERBOSE      Verbose (unescaped whitespace in patternis ignored, and '#' marks comment lines)
+
+compile(pattern[, flags]) -> RegexObject
+match(pattern, string[, flags]) -> MatchObject
+search(pattner, string[, flags]) -> MatchObject
+findall(pattern, string[, flags]) -> list of strings
+finditer(pattern, string[, flags]) -> iter of MatchObjects
+split(pattern, string[, maxsplit, flags]) -> list of strings
+sub(pattern, repl, string[, count, flags]) -> string
+subn(pattern, repl, string[, count, flags]) -> (string, int)
+escape(string) -> stringpurge() # the re cache
+
+###########################
+Module 9
+###########################
+class names are traditionally camelcase
+
+class ClassA(object) = inherits from a default class named object.
+	'''Doc String
+	def __init__(self):                 = class constructor (required)
+		self.varA = "routername"   = 
+    def print_router(self, varB):
+    	print(varA + varB)
+
+thing = ClassA()
+thing.varA = "routername"
+thing.print_router(varB)
+
+getattr(ClassA, varA) = get the attribute of the class object
+setattr(ClassA, varA) = set the attribue inside of the class object
+hasattr(ClassA, varA) = checks to see if this attribute exists / is set
+delattr(ClassA, varA) = removes attribute from the class object
+
+inheritance
+parent -> child
+
+class ClassB(ClassA)
+	(init method is inherited)
+	def __init__(self, varA, varB)  = tell it ALL the variables you want from parent & new
+		ClassA.__init__(self, varA) = brings over the variables from the parent class
+		varB = "blah"
+
+child objects can inherit from multiple parents
+class ClassC(ClassA, ClassB)
+
+issubclass(childClass, parentClass)
+
+###########################
+Module 10
+###########################
+
+Comprehensions:
+automatically append returned variables to the list
+[action loop conditional]
+
+list:
+listA = [print(word) for word in words if len(word) < 5]
+
+set:
+setA = {print(word) for word in words}
+
+dictionary:
+dictA = {wordB: wordA for wordA, wordB in words.items()}
+^ this would reverse a dictionary Value to Key / Key to Value
+
+Lambas:
+lamba arg1 arg2: expression
+
+lamdaA = lamba x, y: x+y
+^ returns a single variable
+
+lambaA = lamba arg7: [x + arg7: for x in range(10)]
+^ returns a list
+
+map(functionA, listA) = applies the function to all items in the list, and returns the list
+
+filter(functionA, listA) = returns all elements if they are true
+
+reduce(functionA, listA)
+- passes listA[0] and listA[1] as arguments to functionA
+- passes the results of the previous statement and listA[2] as arguments to functionA
+- passes the results of the previous statement and listA[3] as arguments to functionA
+- and so on, until there is only a single value returned.
+- this doesn't need to be math...
+
+Threading:
+import threading
+
+threading runs several functions at once
+start() = starts a thread
+join() = waits for them to finish
+
+example:
+----
+import threading
+import time
+
+def myfunction():
+	print ("start a thread")
+	time.sleep(3)
+	print("end a thread")
+
+threads = []
+
+for x in range(5):
+	th = threading.Thread(target = myfunction)
+	th.start()
+	threads.append(th)
+
+for th in threads():
+	th.join()
+---------
+random notes:
+#!/usr/bin/env python
+
+###########################
+Module 11
+###########################
+python networking
+
+
+
+###########################
+Module 12
+###########################
+python & mysql
+
+create database NameX;
+create user 'teopy'@'localhost' identified by 'python';
+use NameX;
+grant all on NetMon.* to 'teopy'@'localhost'
+
+insert into TableName (columnNameA, columnNameB) values (dataA, dataB);
+
+select * from NetworkDevices;
+select * from NetworkDevices where ColumNameA=dataA;
+select Hostname from NetworkDevices where ExtRoutingPro='BGP';
+select IOSVersion, COUNT(IOSVersion) from NetworkDevices group by IOSVersion;
+--
+import as MySQLdb as mdb
+
+sql_host = 1.1.1.1
+sql_user = userName
+sql_pass = password
+sql_db_name = NetMon
+
+sql_connection = mdb.connect(sql_host, sql_user, sql_pass, sql_db_name)
+
+cursor = sql_connection.cursor()
+cursor.execute("use NetMon")
+
+cursor.execute("create table(blahblah)")
+sql_connection.commit()
+sql_connection.close()
+
+#insert a new line
+cursor.execute("insert into TableName(columnA, columnB) values (dataA, dataB)")
+
+cursor.execute("select * from TableName")
+
+# retrieves the data that was previously fetched by the cursor.
+output = cursor.fetchone()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
